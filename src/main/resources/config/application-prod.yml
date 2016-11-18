@@ -1,0 +1,13 @@
+# ===================================================================
+# Spring Boot configuration for the "prod" profile.
+#
+# This configuration overrides the application.yml file.
+# ===================================================================
+
+spring:
+    profiles:
+        active: prod
+
+environment:
+    url: http://www.prodUrl.com
+    name: prodName
