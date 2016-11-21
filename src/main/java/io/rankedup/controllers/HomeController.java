@@ -4,6 +4,7 @@ import io.rankedup.EnvironmentConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.ws.rs.client.Client;
@@ -30,10 +31,11 @@ public class HomeController {
      *
      * @return
      */
-    @RequestMapping(value = "/")
-    private String welcome() {
-        return String.format("Welcome %s, the url for this environment is: %s", config.getName(), url);
-    }
+//    @RequestMapping(value = "/", method = RequestMethod.GET)
+//    private String welcome() {
+////        return String.format("Welcome %s, the url for this environment is: %s", config.getName(), url);
+//        return "index";
+//    }
 
     /**
      * Showing how to consume an external API
@@ -41,7 +43,7 @@ public class HomeController {
      * @return
      */
     @RequestMapping("/character")
-    String auction() {
+    String character() {
         String server = "stormreaver";
         String locale = "en_US";
         String apiKey = "4b824btmudfvcp4k6xsz4eupp944kynk";
