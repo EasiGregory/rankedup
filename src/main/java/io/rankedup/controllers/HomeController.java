@@ -3,9 +3,9 @@ package io.rankedup.controllers;
 import io.rankedup.EnvironmentConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
 
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
@@ -13,7 +13,7 @@ import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-@RestController
+@Controller
 public class HomeController {
 
     Client client = ClientBuilder.newClient();
@@ -31,11 +31,10 @@ public class HomeController {
      *
      * @return
      */
-//    @RequestMapping(value = "/", method = RequestMethod.GET)
-//    private String welcome() {
-////        return String.format("Welcome %s, the url for this environment is: %s", config.getName(), url);
-//        return "index";
-//    }
+    @RequestMapping(value = "/welcome", method = RequestMethod.GET)
+    private String welcome() {
+        return String.format("Welcome %s, the url for this environment is: %s", config.getName(), url);
+    }
 
     /**
      * Showing how to consume an external API
