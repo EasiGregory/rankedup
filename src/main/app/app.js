@@ -1,6 +1,6 @@
 'use strict';
 (function () {
-    var gem = [
+    var gems = [
         {
             name: 'Azurite',
             price: 3.95,
@@ -19,7 +19,7 @@
     var myApp = angular.module('myApp', []);
 
     myApp.controller('StoreController', function () {
-        this.product = gem;
+        this.products = gems;
     });
 })();
 
