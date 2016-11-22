@@ -1,0 +1,46 @@
+<!doctype html>
+<html ng-app="myApp">
+<head>
+    <title>Hello AngularJS</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="app/app.js"></script>
+</head>
+<div class="jumbotron text-center">
+    <h1>RankedUp.io/</h1>
+</div>
+<body>
+<div class="container">
+    <div ng-controller="StoreController as store">
+        <p>Using <b>AngularJs</b> to execute a GET on a JSON file and manipulate the data returned</p>
+        <div ng-repeat="product in store.products">
+            <h2>{{ product.name }}</h2>
+            <h3>{{ product.price }}</h3>
+            <p>{{ product.description }}</p>
+            <p>{{ product.shine }}</p>
+            <p>{{ product.rarity }}</p>
+            <p>{{ product.color }}</p>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div ng-controller="CharacterController">
+        <p>Using <b>AngularJs</b> to consume an external <b>SpringBoot</b> RESTful API (http://RankedUp.io/character)</p>
+        <div>
+            <h2>{{character.name}}</h2>
+            <p>{{ character.realm }}</p>
+            <p>{{ character.battlegroup }}</p>
+            <p>{{ character.class }}</p>
+            <p>{{ character.race }}</p>
+            <p>{{ character.gender }}</p>
+            <p>{{ character.level }}</p>
+            <p>{{ character.achievementPoints }}</p>
+            <p>{{ character.thumbnail }}</p>
+            <p>{{ character.totalHonorableKills }}</p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
