@@ -4,8 +4,10 @@ import io.rankedup.EnvironmentConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
@@ -14,6 +16,7 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 @Controller
+@RestController
 public class HomeController {
 
     Client client = ClientBuilder.newClient();
@@ -41,6 +44,7 @@ public class HomeController {
      *
      * @return
      */
+    @CrossOrigin
     @RequestMapping("/character")
     String character() {
         String server = "stormreaver";
